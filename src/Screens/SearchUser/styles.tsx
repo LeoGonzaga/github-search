@@ -22,4 +22,22 @@ export const SearchName = styled.input`
   text-align: center;
   padding: 10px;
   outline: none;
+  color: ${colors.text};
+`;
+
+export const ActionButton = styled.button`
+  background-color: ${colors.details};
+  height: 45px;
+  width: 18rem;
+
+  max-width: 18rem;
+  margin-top: 1rem;
+
+  border-radius: 5px;
+  border: none;
+
+  p {
+    color: ${colors.text};
+    font-weight: 700;
+  }
 `;

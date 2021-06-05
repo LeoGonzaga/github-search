@@ -1,5 +1,7 @@
 import React from "react";
-import Login from "../src/Screens/Login/Login";
+import SearchUser from "../src/Screens/SearchUser/SearchUser";
+
+
 export default function Start() {
-  return <Login />;
+  return <SearchUser />;
 }
