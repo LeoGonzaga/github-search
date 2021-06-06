@@ -1,8 +1,9 @@
 import React from "react";
 import Header from "../../Components/Header/Header";
 import ProfileCard from "../../Components/ProfileCard/ProfileCard";
+import Repo from "../../Components/Repo/Repo";
 
-import { Container, Wrapper } from "./styles";
+import { Container, Wrapper, WrapperRepo } from "./styles";
 
 type User = {
   login: string;
@@ -17,12 +18,19 @@ type User = {
 
 const Profile: React.FC<User> = ({ login }) => {
   return (
-    <Container>
+    <>
       <Header />
-      <Wrapper>
-        <ProfileCard />
-      </Wrapper>
-    </Container>
+      <Container>
+        <Wrapper>
+          <ProfileCard />
+        </Wrapper>
+        <WrapperRepo>
+          <Repo />
+          <Repo />
+          <Repo />
+        </WrapperRepo>
+      </Container>
+    </>
   );
 };
 

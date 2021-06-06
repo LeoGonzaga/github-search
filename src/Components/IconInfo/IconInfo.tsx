@@ -4,6 +4,8 @@ import Location from "../../../assets/location.svg";
 import People from "../../../assets/people.svg";
 import Following from "../../../assets/people (2).svg";
 import Star from "../../../assets/star.svg";
+import Fork from "../../../assets/fork.svg";
+import Linguage from "../../../assets/linguage.svg";
 import { Container } from "./styles";
 
 type IconType = {
@@ -23,6 +25,10 @@ const IconInfo: React.FC<IconType> = ({ name, icon }) => {
         return <Star />;
       case "Following":
         return <Following />;
+      case "Fork":
+        return <Fork />;
+      case "Linguage":
+        return <Linguage />;
       default:
         break;
     }

@@ -1,6 +1,7 @@
 import React from "react";
 import IconInfo from "../IconInfo/IconInfo";
 import TotalRepos from "../TotalRepos/TotalRepos";
+import { icons } from "../../Constants/icons";
 import {
   Container,
   Avatar,
@@ -20,13 +21,13 @@ const ProfileCard: React.FC = () => {
         <InstagramLink>@leogonzaga__</InstagramLink>
         <WrapperInfos>
           <WrapperInfosItem>
-            <IconInfo name="Itajuba-MG" icon="Location" />
-            <IconInfo name="D1" icon="Home" />
+            <IconInfo name="Itajuba-MG" icon={icons.location} />
+            <IconInfo name="D1" icon={icons.home} />
           </WrapperInfosItem>
           <WrapperInfosItem>
-            <IconInfo name="132" icon="People" />
-            <IconInfo name="22" icon="Following" />
-            <IconInfo name="444" icon="Star" />
+            <IconInfo name="132" icon={icons.people} />
+            <IconInfo name="22" icon={icons.following} />
+            <IconInfo name="444" icon={icons.star} />
           </WrapperInfosItem>
         </WrapperInfos>
       </Infos>
