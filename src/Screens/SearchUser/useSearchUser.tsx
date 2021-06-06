@@ -1,6 +1,6 @@
 import { ChangeEvent, useCallback, useState } from "react";
 import { useRouter } from "next/router";
-
+import { routes } from "../../routes";
 type SearchUser = {
   username: string;
   handleChangeUsername: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -18,7 +18,7 @@ const useSearchUser = (): SearchUser => {
   );
 
   const handleRedirectProfilePage = useCallback(() => {
-    router.push("user/" + username);
+    router.push(routes.profileUser + username);
   }, [username]);
 
   return { username, handleChangeUsername, handleRedirectProfilePage };
