@@ -18,7 +18,7 @@ const useSearchUser = (): SearchUser => {
   );
 
   const handleRedirectProfilePage = useCallback(() => {
-    router.push("/" + username);
+    router.push("user/" + username);
   }, [username]);
 
   return { username, handleChangeUsername, handleRedirectProfilePage };
