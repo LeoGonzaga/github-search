@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../../Components/Header/Header";
 
 import { Container } from "./styles";
 
@@ -16,6 +17,7 @@ type User = {
 const Profile: React.FC<User> = ({ login }) => {
   return (
     <Container>
+      <Header/>
       <h1>{login}</h1>
     </Container>
   );

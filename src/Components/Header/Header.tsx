@@ -1,9 +1,17 @@
 import React from "react";
-
-// import { Container } from './styles';
+import Logo from "../../../assets/logo_profile.svg";
+import Back from "../../../assets/back.svg";
+import { Container, BackButton } from "./styles";
 
 const Header: React.FC = () => {
-  return <div />;
+  return (
+    <Container>
+      <Logo />
+      <BackButton>
+        <Back />
+      </BackButton>
+    </Container>
+  );
 };
 
 export default Header;
