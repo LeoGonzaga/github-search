@@ -3,26 +3,37 @@ import { useCallback, useEffect, useState } from "react";
 import Profile from "../../src/Screens/Profile/Profile";
 import api from "../../api/API";
 
-function User() {
-  const { query } = useRouter();
+type User = {
+  login: string;
+  avatar_url: string;
+  repos_url: string;
+  bio: string;
+  followers: number;
+  following: number;
+  public_repos: number;
+};
 
-  const [user, setUser] = useState();
-  const [username, setUsernae] = useState("");
+function User() {
+  const router = useRouter();
+  const { username } = router.query;
+  const [user, setUser] = useState({} as User);
 
   const handleRequestAPI = useCallback(async () => {
     try {
-      let { data } = await api.get(query.user);
-      setUser(data);
+      let { data } = await api.get(username);
+      console.log(data);
+      setUser(data?.user);
     } catch (e) {
       console.info(e);
     }
-  }, [query]);
+  }, [username]);
 
   useEffect(() => {
-    if (query) {
+    if (username) {
       handleRequestAPI();
     }
-  }, [query]);
+  }, [username]);
+
   return <Profile user={user} />;
 }
 
