@@ -3,7 +3,6 @@ import { colors } from "../../Constants/colors";
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: ${colors.primary};
 
   display: flex;
   flex-direction: column;
@@ -35,6 +34,10 @@ export const ActionButton = styled.button`
 
   border-radius: 5px;
   border: none;
+
+  &:hover {
+    filter: brightness(80%);
+  }
 
   p {
     color: ${colors.text};

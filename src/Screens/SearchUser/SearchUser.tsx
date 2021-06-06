@@ -9,7 +9,7 @@ const SearchUser: React.FC = () => {
       <Logo />
       <SearchName placeholder="Enter username" />
       <ActionButton>
-        <p>Search</p>
+        <p>Search </p>
       </ActionButton>
     </Container>
   );
