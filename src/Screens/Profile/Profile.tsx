@@ -1,7 +1,8 @@
 import React from "react";
 import Header from "../../Components/Header/Header";
+import ProfileCard from "../../Components/ProfileCard/ProfileCard";
 
-import { Container } from "./styles";
+import { Container, Wrapper } from "./styles";
 
 type User = {
   login: string;
@@ -17,8 +18,10 @@ type User = {
 const Profile: React.FC<User> = ({ login }) => {
   return (
     <Container>
-      <Header/>
-      <h1>{login}</h1>
+      <Header />
+      <Wrapper>
+        <ProfileCard />
+      </Wrapper>
     </Container>
   );
 };
