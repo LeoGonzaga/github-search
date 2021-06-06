@@ -2,6 +2,7 @@ import React from "react";
 import Home from "../../../assets/home.svg";
 import Location from "../../../assets/location.svg";
 import People from "../../../assets/people.svg";
+import Following from "../../../assets/people (2).svg";
 import Star from "../../../assets/star.svg";
 import { Container } from "./styles";
 
@@ -20,6 +21,8 @@ const IconInfo: React.FC<IconType> = ({ name, icon }) => {
         return <People />;
       case "Star":
         return <Star />;
+      case "Following":
+        return <Following />;
       default:
         break;
     }
