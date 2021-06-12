@@ -34,6 +34,7 @@ export const ActionButton = styled.button`
 
   border-radius: 5px;
   border: none;
+  outline: none;
 
   &:hover {
     filter: brightness(80%);
