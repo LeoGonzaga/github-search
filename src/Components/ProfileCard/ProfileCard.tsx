@@ -15,7 +15,6 @@ import {
 type User = {
   login: string;
   avatar_url: string;
-  repos_url: string;
 
   bio: string;
   followers: number;
@@ -34,7 +33,6 @@ const ProfileCard: React.FC<User> = ({
   location,
   public_repos,
   company,
-  repos_url,
 }: User) => {
   return (
     <Container>

@@ -11,6 +11,8 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin-left: 20px;
+  padding: 10px 0px;
+ 
 `;
 
 export const Title = styled.p`
@@ -27,5 +29,4 @@ export const Total = styled.p`
 export const Wrapper = styled.div`
   display: flex;
   padding-top: 5px;
- 
 `;

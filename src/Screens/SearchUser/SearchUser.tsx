@@ -14,7 +14,11 @@ const SearchUser: React.FC = () => {
         placeholder="Enter username"
         onChange={handleChangeUsername}
       />
-      <ActionButton onClick={handleRedirectProfilePage}>
+      <ActionButton
+        onClick={handleRedirectProfilePage}
+        whileHover={{ scale: 1.2 }}
+        transition={{ duration: 0.5 }}
+      >
         <p>Search </p>
       </ActionButton>
     </Container>

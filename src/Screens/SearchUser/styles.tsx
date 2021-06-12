@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
 import { colors } from "../../Constants/colors";
 export const Container = styled.div`
   width: 100vw;
@@ -24,7 +26,7 @@ export const SearchName = styled.input`
   color: ${colors.text};
 `;
 
-export const ActionButton = styled.button`
+export const ActionButton = styled(motion.button)`
   background-color: ${colors.details};
   height: 45px;
   width: 18rem;

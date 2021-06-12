@@ -7,6 +7,11 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+
+  @media(max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 export const Avatar = styled.img`
@@ -14,6 +19,11 @@ export const Avatar = styled.img`
   height: 200px;
   border-radius: 50%;
   border:4px solid ${colors.details};
+
+  
+  @media(max-width: 800px) {
+   margin-bottom: 10px;
+  }
 `;
 
 export const Username = styled.h1`
@@ -37,6 +47,10 @@ export const WrapperInfos = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 20px;
+
+  @media(max-width: 800px) {
+   margin-bottom: 10px;
+  }
 `;
 
 export const WrapperInfosItem = styled.div`

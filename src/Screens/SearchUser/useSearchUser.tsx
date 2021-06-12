@@ -18,6 +18,11 @@ const useSearchUser = (): SearchUser => {
   );
 
   const handleRedirectProfilePage = useCallback(() => {
+    if (username.length < 3) {
+      alert("Ops! Digite um usuário com o nome válido.");
+      return;
+    }
+
     router.push(routes.profileUser + username);
   }, [username]);
 

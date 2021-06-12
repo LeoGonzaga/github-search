@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
 import { colors } from "../../Constants/colors";
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   background-color: ${colors.secundary};
   height: 115px;
   min-width: 300px;

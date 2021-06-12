@@ -8,6 +8,10 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px;
+
+  @media (max-width: 800px) {
+  margin-bottom: 50px;
+  }
 `;
 
 export const BackButton = styled.button`

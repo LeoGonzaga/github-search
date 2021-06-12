@@ -17,7 +17,7 @@ const Repo: React.FC<RepoProps> = ({
   forks_count,
 }) => {
   return (
-    <Container>
+    <Container dragX>
       <Title>{full_name}</Title>
       <Infos>
         <IconInfo name={watchers_count} icon={icons.star} />

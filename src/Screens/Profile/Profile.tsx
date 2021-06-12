@@ -5,6 +5,7 @@ import Header from "../../Components/Header/Header";
 import Loader from "../../Components/Loader/Loader";
 import ProfileCard from "../../Components/ProfileCard/ProfileCard";
 import Repo from "../../Components/Repo/Repo";
+import { routes } from "../../routes";
 
 import { Container, Wrapper, WrapperRepo } from "./styles";
 
@@ -33,6 +34,7 @@ const Profile: React.FC = () => {
       seDatatUser(data);
       await getAllRepos();
     } catch (e) {
+      router.push(routes.searchUser);
       console.info(e);
     }
   }, []);
@@ -65,7 +67,6 @@ const Profile: React.FC = () => {
                 bio={dataUser?.bio}
                 followers={dataUser?.followers}
                 public_repos={dataUser?.public_repos}
-                repos_url={dataUser?.repos_url}
                 following={dataUser?.following}
                 company={dataUser?.company}
                 location={dataUser?.location}

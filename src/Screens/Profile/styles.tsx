@@ -21,4 +21,8 @@ export const WrapperRepo = styled.div`
   overflow-x: scroll;
   max-width: 80%;
   padding: 5px 20px;
+
+  @media (max-width: 800px) {
+    margin-top: 60px;
+  }
 `;
