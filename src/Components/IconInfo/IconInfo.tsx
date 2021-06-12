@@ -9,7 +9,7 @@ import Linguage from "../../../assets/linguage.svg";
 import { Container } from "./styles";
 
 type IconType = {
-  name: string;
+  name: string | number;
   icon: string;
 };
 const IconInfo: React.FC<IconType> = ({ name, icon }) => {

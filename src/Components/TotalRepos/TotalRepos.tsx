@@ -2,13 +2,16 @@ import React from "react";
 import Git from "../../../assets/git.svg";
 import { Container, Title, Total, Wrapper } from "./styles";
 
-const TotalRepos: React.FC = () => {
+type Total = {
+  public_repos: number;
+};
+const TotalRepos: React.FC<Total> = ({ public_repos }) => {
   return (
     <Container>
       <Title>Total de repositórios:</Title>
       <Wrapper>
         <Git />
-        <Total>98</Total>
+        <Total>{public_repos}</Total>
       </Wrapper>
     </Container>
   );

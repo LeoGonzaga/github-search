@@ -28,7 +28,7 @@ export const Infos = styled.div`
   padding-left: 30px;
 `;
 
-export const InstagramLink = styled.h1`
+export const InstagramLink = styled.a`
   font-size: 16px;
   color: ${colors.text};
 `;

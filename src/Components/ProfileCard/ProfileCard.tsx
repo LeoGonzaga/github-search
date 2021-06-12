@@ -12,26 +12,49 @@ import {
   WrapperInfosItem,
 } from "./styles";
 
-const ProfileCard: React.FC = () => {
+type User = {
+  login: string;
+  avatar_url: string;
+  repos_url: string;
+
+  bio: string;
+  followers: number;
+  following: number;
+  public_repos: number;
+  company: string;
+  location: string;
+};
+
+const ProfileCard: React.FC<User> = ({
+  login,
+  avatar_url,
+  bio,
+  followers,
+  following,
+  location,
+  public_repos,
+  company,
+  repos_url,
+}: User) => {
   return (
     <Container>
-      <Avatar src="https://avatars.githubusercontent.com/u/15916913?v=4" />
+      <Avatar src={avatar_url} />
       <Infos>
-        <Username>LéoGonzaga</Username>
-        <InstagramLink>@leogonzaga__</InstagramLink>
+        <Username>{login}</Username>
+        <InstagramLink>{bio}</InstagramLink>
         <WrapperInfos>
           <WrapperInfosItem>
-            <IconInfo name="Itajuba-MG" icon={icons.location} />
-            <IconInfo name="D1" icon={icons.home} />
+            <IconInfo name={location} icon={icons.location} />
+            <IconInfo name={company} icon={icons.home} />
           </WrapperInfosItem>
           <WrapperInfosItem>
-            <IconInfo name="132" icon={icons.people} />
-            <IconInfo name="22" icon={icons.following} />
+            <IconInfo name={followers} icon={icons.people} />
+            <IconInfo name={following} icon={icons.following} />
             <IconInfo name="444" icon={icons.star} />
           </WrapperInfosItem>
         </WrapperInfos>
       </Infos>
-      <TotalRepos />
+      <TotalRepos public_repos={public_repos} />
     </Container>
   );
 };
