@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import React, { useCallback, useEffect, useState } from "react";
 import api from "../../../api/API";
 import Header from "../../Components/Header/Header";
+import Loader from "../../Components/Loader/Loader";
 import ProfileCard from "../../Components/ProfileCard/ProfileCard";
 import Repo from "../../Components/Repo/Repo";
 
@@ -39,7 +40,6 @@ const Profile: React.FC = () => {
   const getAllRepos = useCallback(async () => {
     try {
       let { data } = await api.get(`${user}/repos`);
-      console.log(data);
       setRepos(data);
     } catch (e) {
       console.info(e);
@@ -59,7 +59,6 @@ const Profile: React.FC = () => {
           <Header />
           <Container>
             <Wrapper>
-              {console.log(dataUser)}
               <ProfileCard
                 login={dataUser?.login}
                 avatar_url={dataUser?.avatar_url}
@@ -72,22 +71,30 @@ const Profile: React.FC = () => {
                 location={dataUser?.location}
               />
             </Wrapper>
-            <WrapperRepo>
-              {repos?.map(
-                ({ full_name, language, watchers_count, forks_count }) => (
-                  <Repo
-                    full_name={full_name}
-                    language={language}
-                    forks_count={forks_count}
-                    watchers_count={watchers_count}
-                  />
-                )
-              )}
-            </WrapperRepo>
+            {repos ? (
+              <WrapperRepo>
+                {repos?.map(
+                  (
+                    { full_name, language, watchers_count, forks_count },
+                    index
+                  ) => (
+                    <Repo
+                      key={index}
+                      full_name={full_name}
+                      language={language}
+                      forks_count={forks_count}
+                      watchers_count={watchers_count}
+                    />
+                  )
+                )}
+              </WrapperRepo>
+            ) : (
+              <Loader />
+            )}
           </Container>
         </>
       ) : (
-        <h2>...</h2>
+        <Loader />
       )}
     </>
   );
