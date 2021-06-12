@@ -50,7 +50,6 @@ const ProfileCard: React.FC<User> = ({
           <WrapperInfosItem>
             <IconInfo name={followers} icon={icons.people} />
             <IconInfo name={following} icon={icons.following} />
-            <IconInfo name="444" icon={icons.star} />
           </WrapperInfosItem>
         </WrapperInfos>
       </Infos>

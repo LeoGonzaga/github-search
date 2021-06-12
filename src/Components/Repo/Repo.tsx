@@ -3,15 +3,26 @@ import IconInfo from "../IconInfo/IconInfo";
 import { icons } from "../../Constants/icons";
 import { Container, Title, Infos } from "./styles";
 
-const Repo: React.FC = () => {
+type RepoProps = {
+  full_name: string;
+  language: string;
+  watchers_count: number;
+  forks_count: number;
+};
+
+const Repo: React.FC<RepoProps> = ({
+  full_name,
+  watchers_count,
+  language,
+  forks_count,
+}) => {
   return (
     <Container>
-      <Title>Acelerar-Audio-Whats</Title>
-      <p>A simple to do list in a pure vanilla javascript </p>
+      <Title>{full_name}</Title>
       <Infos>
-        <IconInfo name="2" icon={icons.star} />
-        <IconInfo name="22" icon={icons.fork} />
-        <IconInfo name="Javascript" icon={icons.linguage} />
+        <IconInfo name={watchers_count} icon={icons.star} />
+        <IconInfo name={forks_count} icon={icons.fork} />
+        <IconInfo name={language} icon={icons.linguage} />
       </Infos>
     </Container>
   );

@@ -18,4 +18,7 @@ export const WrapperRepo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: scroll;
+  max-width: 80%;
+  padding: 5px 20px;
 `;

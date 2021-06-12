@@ -3,12 +3,14 @@ import { colors } from "../../Constants/colors";
 
 export const Container = styled.div`
   background-color: ${colors.secundary};
-  height: 135px;
-  width: 282px;
+  height: 115px;
+  min-width: 300px;
   margin: 20px;
   padding: 20px;
 
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
   p {
     color: ${colors.text};
@@ -20,6 +22,7 @@ export const Title = styled.h1`
   font-size: 18px;
   font-weight: bold;
   color: ${colors.text};
+  word-wrap: break-word;
 `;
 
 export const Infos = styled.div`

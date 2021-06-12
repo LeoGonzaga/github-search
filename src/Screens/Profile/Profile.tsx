@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import api from "../../../api/API";
 import Header from "../../Components/Header/Header";
 import ProfileCard from "../../Components/ProfileCard/ProfileCard";
@@ -24,15 +24,27 @@ const Profile: React.FC = () => {
   const router = useRouter();
   const { user } = router.query;
   const [dataUser, seDatatUser] = useState({} as User);
+  const [repos, setRepos] = useState([]);
 
-  const handleRequestAPI = async () => {
+  const handleRequestAPI = useCallback(async () => {
     try {
       let { data } = await api.get(user);
       seDatatUser(data);
+      await getAllRepos();
     } catch (e) {
       console.info(e);
     }
-  };
+  }, []);
+
+  const getAllRepos = useCallback(async () => {
+    try {
+      let { data } = await api.get(`${user}/repos`);
+      console.log(data);
+      setRepos(data);
+    } catch (e) {
+      console.info(e);
+    }
+  }, [dataUser]);
 
   useEffect(() => {
     if (user) {
@@ -61,9 +73,16 @@ const Profile: React.FC = () => {
               />
             </Wrapper>
             <WrapperRepo>
-              <Repo />
-              <Repo />
-              <Repo />
+              {repos?.map(
+                ({ full_name, language, watchers_count, forks_count }) => (
+                  <Repo
+                    full_name={full_name}
+                    language={language}
+                    forks_count={forks_count}
+                    watchers_count={watchers_count}
+                  />
+                )
+              )}
             </WrapperRepo>
           </Container>
         </>
