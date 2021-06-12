@@ -15,8 +15,8 @@ export const Container = styled.div`
 `;
 
 export const Avatar = styled.img`
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   border:4px solid ${colors.details};
 

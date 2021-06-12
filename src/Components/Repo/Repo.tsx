@@ -17,7 +17,11 @@ const Repo: React.FC<RepoProps> = ({
   forks_count,
 }) => {
   return (
-    <Container dragX>
+    <Container
+      drag="x"
+      dragConstraints={{ left: 0, right: 300 }}
+      dragElastic={0.2}
+    >
       <Title>{full_name}</Title>
       <Infos>
         <IconInfo name={watchers_count} icon={icons.star} />

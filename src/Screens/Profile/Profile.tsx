@@ -22,17 +22,23 @@ type User = {
   company: string;
 };
 
+type Username = {
+  user?: string | undefined;
+};
+
 const Profile: React.FC = () => {
   const router = useRouter();
-  const { user } = router.query;
+  const { user }: Username = router.query;
   const [dataUser, seDatatUser] = useState({} as User);
   const [repos, setRepos] = useState([]);
 
   const handleRequestAPI = useCallback(async () => {
     try {
-      let { data } = await api.get(user);
-      seDatatUser(data);
-      await getAllRepos();
+      if (user) {
+        let { data } = await api.get(user);
+        seDatatUser(data);
+        await getAllRepos();
+      }
     } catch (e) {
       router.push(routes.searchUser);
       console.info(e);
