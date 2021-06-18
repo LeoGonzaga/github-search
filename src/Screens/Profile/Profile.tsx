@@ -60,6 +60,8 @@ const Profile: React.FC = () => {
     }
   }, [user]);
 
+  console.log(dataUser);
+
   return (
     <>
       {dataUser?.login ? (

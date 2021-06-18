@@ -36,6 +36,8 @@ export const Infos = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 30px;
+
+  align-items: center;
 `;
 
 export const InstagramLink = styled.a`
@@ -47,6 +49,7 @@ export const WrapperInfos = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 20px;
+  align-items: center;
 
   @media(max-width: 800px) {
    margin-bottom: 10px;
