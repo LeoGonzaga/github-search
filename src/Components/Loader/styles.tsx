@@ -13,4 +13,8 @@ export const Container = styled.div`
   width: 120px;
   height: 120px;
   animation: ${looping} 2s linear infinite;
+
+
+  display: flex;
+  align-self: center;
 `;

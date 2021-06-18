@@ -103,7 +103,9 @@ const Profile: React.FC = () => {
           </Container>
         </>
       ) : (
-        <Loader />
+        <Container>
+          <Loader />
+        </Container>
       )}
     </>
   );

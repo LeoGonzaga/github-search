@@ -20,6 +20,7 @@ export const Avatar = styled.img`
   border-radius: 50%;
   border:4px solid ${colors.details};
 
+  margin: 30px;
   
   @media(max-width: 800px) {
    margin-bottom: 10px;
@@ -35,7 +36,6 @@ export const Username = styled.h1`
 export const Infos = styled.div`
   display: flex;
   flex-direction: column;
-  padding-left: 30px;
 
   align-items: center;
 `;

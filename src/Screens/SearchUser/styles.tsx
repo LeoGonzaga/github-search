@@ -1,7 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
-
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { colors } from "../../Constants/colors";
+
+const looping = keyframes`
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+`;
+export const LoadingIcon = styled(AiOutlineLoading3Quarters)`
+  animation: ${looping} 2s linear infinite;
+`;
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -10,6 +18,11 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const SearchName = styled.input`

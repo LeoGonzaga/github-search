@@ -20,8 +20,8 @@ export const WrapperRepo = styled.div`
   align-items: center;
   overflow-x: scroll;
   max-width: 80%;
-  padding: 5px 20px;
 
+  padding-left: 300px;
   @media (max-width: 800px) {
     margin-top: 60px;
   }

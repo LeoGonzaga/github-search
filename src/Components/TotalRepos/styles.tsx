@@ -12,6 +12,10 @@ export const Container = styled.div`
   align-items: center;
   margin-left: 20px;
   padding: 10px 0px;
+
+  @media(max-width: 800px) {
+    margin-left: 0px;
+  }
  
 `;
 
