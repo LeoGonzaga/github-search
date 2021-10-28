@@ -1,7 +1,7 @@
 
 
 <div align="center">
-<h2>Spotivrau</h2>
+<h2>Github Search</h2>
 </div>   
 <p align="center">	
    <a href="https://www.linkedin.com/in/leogonzaga/">
